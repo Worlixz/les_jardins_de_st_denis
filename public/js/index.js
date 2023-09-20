@@ -1,5 +1,10 @@
 console.log('je suis connecté à index')
 
+import {db , storage} from './init_firebase'
+import { collection, getDocs } from "firebase/firestore"; 
+import { ref, getDownloadURL } from "firebase/storage";
+
+
 
 
 
