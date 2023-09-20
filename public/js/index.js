@@ -1,12 +1,15 @@
 console.log('je suis connecté à index')
 
-import {db , storage} from './init_firebase'
+import {db , storage} from '../js/init_firebase'
 import { collection, getDocs } from "firebase/firestore"; 
 import { ref, getDownloadURL } from "firebase/storage";
 
 
 
-
+const querySnapshot = await getDocs(collection(db, 'avis'))
+querySnapshot.forEach((doc => {
+  console.log(doc.id, " => ", doc.data());
+}))
 
 
 
