@@ -1,22 +1,112 @@
-console.log('je suis connecté à index')
-
 import {db , storage} from '../js/init_firebase'
 import { collection, getDocs } from "firebase/firestore"; 
 import { ref, getDownloadURL } from "firebase/storage";
+import { compileAsync } from 'sass';
 
+
+let arrayAvis = []
+const containerAvis = document.getElementById('containerAvis')
 
 
 const querySnapshot = await getDocs(collection(db, 'avis'))
 querySnapshot.forEach((doc => {
   console.log(doc.id, " => ", doc.data());
+  arrayAvis.push(doc.data())
 }))
 
 
+console.log(arrayAvis);
 
+let rand = Math.floor(Math.random()*arrayAvis.length)
+const selectedAvis = arrayAvis[rand]
+console.log(selectedAvis);
 
+async function affichageAvis (selectedAvis, containerAvis) {
+    const fctAvis = await selectedAvis
+    const divAvis = document.createElement('div')
+    divAvis.innerHTML = `
+        <div class="nameAndNote">
+            <div>
+                <p>${fctAvis.auteur}</p>
+                <p>Prestation : ${fctAvis.prestation}</p>
+            </div>
+            <div>
+                ${note(fctAvis)}
+            </div>
+        </div>
+        <div class="avisUser">
+            <p>
+                "${fctAvis.avis}"
+            </p>
+        </div>
+    `
+containerAvis.append(divAvis)
+}
 
+affichageAvis(selectedAvis, containerAvis)
 
+function note (fctAvis) {
+    /* const divNote = document.createElement('div')
+    const starStoke = document.createElement('i')
+    starStoke.innerHTML = `<img src="./public/assets/logo/star_stroke.svg" alt="" srcset="">`
+    const starOrange = document.createElement('i')
+    starOrange.innerHTML = `<img src="./public/assets/logo/Star_orange.svg" alt="" srcset="">`
+    console.log('je suis dans la function note :', fctAvis.note)
+    for (let index = 0; index < 5; index++) {
+        if(fctAvis.note > index){
+            return divNote.append(starOrange)
+        }else {
+            return divNote.append(starStoke)
+            console.log("j'ai une mauvaise note");
+        }
+        
+    } */
 
+    switch (fctAvis.note) {
+        case 1: 
+            return `
+                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+            `
+        case 2: 
+            return `
+                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+            `
+        case 3: 
+            return `
+                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+            `
+        
+        
+        case 4: 
+            return `
+                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+            `
+        case 5: 
+            return `
+                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+            `
+    }
+}
 
 
 
