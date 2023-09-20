@@ -3,15 +3,6 @@ import { collection, getDocs } from "firebase/firestore";
 import { ref, getDownloadURL } from "firebase/storage";
 import { compileAsync } from 'sass';
 
-// Printemps 01/03 => 31/05
-// Eté 01/06 => 31/08
-// Autonne 01/09 => 30/11
-// Hiver 1/12 => 28/02
-
-let initDate = new Date()
-const date = initDate.getDate() + '/' + (initDate.getMonth()+1)
-
-console.log(date);
 
 
 let arrayAvis = []
@@ -99,20 +90,63 @@ function note (fctAvis) {
 }
 
 
+// Printemps 01/03 => 31/05
+// Eté 01/06 => 31/08
+// Autonne 01/09 => 30/11
+// Hiver 1/12 => 28/02
 
+function affichageHerobanner () {
+   const imgBanner = document.getElementById('herobanner_photo')
+   const slogan = document.getElementById('sloganBanner')
+   console.log(imgBanner);
+   const initDate = new Date()
+   const monthDate = (initDate.getMonth()+1)
+   
+   switch (monthDate) {
+    case 1 : 
+        imgBanner.classList.add('herobanner_winter')
+        break
+    case 2 : 
+        imgBanner.classList.add('herobanner_winter')
+        break
+    case 3 : 
+        imgBanner.classList.add('herobanner_spring')
+        break
+    case 4 : 
+        imgBanner.classList.add('herobanner_spring')
+        break
+    case 5 : 
+        imgBanner.classList.add('herobanner_spring')
+        break
+    case 6 : 
+        imgBanner.classList.add('herobanner_summer')
+        slogan.classList.remove('sloganWhite')
+        break
+    case 7 : 
+        imgBanner.classList.add('herobanner_summer')
+        slogan.classList.remove('sloganWhite')
+        break
+    case 8 : 
+        imgBanner.classList.add('herobanner_summer')
+        slogan.classList.remove('sloganWhite')
+        break
+    case 9 : 
+        imgBanner.classList.add('herobanner_autumn')
+        break
+    case 10 : 
+        imgBanner.classList.add('herobanner_autumn')
+        break
+    case 11 : 
+        imgBanner.classList.add('herobanner_autumn')
+        break
+    case 12 : 
+        imgBanner.classList.add('herobanner_winter')
+        break
+    
+}
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+affichageHerobanner()
 
 /* SLIDER */
 let sliders = document.querySelectorAll('.slider');
