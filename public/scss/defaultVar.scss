@@ -1,9 +1,49 @@
-*, body {
+$light-green: #26782A;
+$dark-green: #141C0F;
+$light-yellow: #E7E8A6;
+$light-orange: #DB942E;
+$dark-orange: #8A4410;
+
+
+body, *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+  
+h1{
+    color: $dark-orange;
+}
+  
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../assets/fonts/static/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: 'Yellowtail';
+    src: url(../assets/fonts/Yellowtail-Regular.ttf);
 }
 
-h2 {
-    color: blue;
+h2, h3, h4, h5, h6, p, a, button{
+    font-family: 'Montserrat';
+}
+
+
+a{
+    text-decoration: none;
+}
+a:hover{
+    cursor: pointer;
+}
+a:visited{
+    color: black;
+}
+.container{
+    max-width: 1440px;
+    margin: 75px auto 0;
+}
+
+.spanGreen{
+color: $light-green;
 }
