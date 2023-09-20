@@ -3,6 +3,16 @@ import { collection, getDocs } from "firebase/firestore";
 import { ref, getDownloadURL } from "firebase/storage";
 import { compileAsync } from 'sass';
 
+// Printemps 01/03 => 31/05
+// Eté 01/06 => 31/08
+// Autonne 01/09 => 30/11
+// Hiver 1/12 => 28/02
+
+let initDate = new Date()
+const date = initDate.getDate() + '/' + (initDate.getMonth()+1)
+
+console.log(date);
+
 
 let arrayAvis = []
 const containerAvis = document.getElementById('containerAvis')
@@ -10,16 +20,12 @@ const containerAvis = document.getElementById('containerAvis')
 
 const querySnapshot = await getDocs(collection(db, 'avis'))
 querySnapshot.forEach((doc => {
-  console.log(doc.id, " => ", doc.data());
   arrayAvis.push(doc.data())
 }))
 
 
-console.log(arrayAvis);
-
 let rand = Math.floor(Math.random()*arrayAvis.length)
 const selectedAvis = arrayAvis[rand]
-console.log(selectedAvis);
 
 async function affichageAvis (selectedAvis, containerAvis) {
     const fctAvis = await selectedAvis
@@ -46,22 +52,6 @@ containerAvis.append(divAvis)
 affichageAvis(selectedAvis, containerAvis)
 
 function note (fctAvis) {
-    /* const divNote = document.createElement('div')
-    const starStoke = document.createElement('i')
-    starStoke.innerHTML = `<img src="./public/assets/logo/star_stroke.svg" alt="" srcset="">`
-    const starOrange = document.createElement('i')
-    starOrange.innerHTML = `<img src="./public/assets/logo/Star_orange.svg" alt="" srcset="">`
-    console.log('je suis dans la function note :', fctAvis.note)
-    for (let index = 0; index < 5; index++) {
-        if(fctAvis.note > index){
-            return divNote.append(starOrange)
-        }else {
-            return divNote.append(starStoke)
-            console.log("j'ai une mauvaise note");
-        }
-        
-    } */
-
     switch (fctAvis.note) {
         case 1: 
             return `
