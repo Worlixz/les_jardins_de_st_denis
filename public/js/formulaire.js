@@ -4,6 +4,7 @@ import emailjs from '@emailjs/browser';
 const divForm = document.getElementById('containerForm')
 const btnClick = document.getElementById('btnClick')
 
+emailjs.init('65GzM2nYvTARgXkQ9')
 
 const initStep = 1
 let currentStep = 1
@@ -72,13 +73,13 @@ function firstStep () {
     const divBtnCrea = document.getElementById('divBtnCrea')
     const divBtnReal = document.getElementById('divBtnReal')
     divBtnCrea.addEventListener('click', (e) => {
-        dataForm.type = "crea"
+        dataForm.type = "Creation"
         console.log(dataForm);
         divBtnCrea.classList.add('selected')
         divBtnReal.classList.remove('selected')
     })
     divBtnReal.addEventListener('click', (e) => {
-        dataForm.type = "real"
+        dataForm.type = "Realisation"
         console.log(dataForm);
         divBtnReal.classList.add('selected')
         divBtnCrea.classList.remove('selected')
@@ -437,17 +438,25 @@ function fiveStep () {
     });
     btnClick.remove()
     btnEnvoyer.addEventListener('click', (e) => {
-        console.log('jenvoie');
+        sendMail(dataForm)
     })
 }
 
 
 firstStep()
+const serviceID = "service_vzb3e47" // OK
+const templateID = "template_q43ojht" // ok
 
+function sendMail(dataForm){
+  const fctForm = dataForm
+  emailjs.send(serviceID, templateID, fctForm)
+  .then(response => {
+    console.log('SUCCESS', response.status, response.text);
+  })
+  .catch(err => console.log('FAILED...', err))
+}
 
 /* EMAIL JS  */
 
-emailjs.init('user_65GzM2nYvTARgXkQ9')
-const serviceID = "service_vzb3e47" // OK
-const templateID = "template_q43ojht" // ok
+
 
