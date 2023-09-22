@@ -6,14 +6,32 @@
     <title>Les jardins de St-Denis</title>
   </head>
   <body>
-    <div>
-        <a href="/">Accueil</a>
-        <a href="/formulaire.html">Formulaire</a>
-        <a href="/galerie.html">Galerie</a>
-      </div>
-    <h1>Galerie</h1>
-    <h2>H2</h2>
+      <nav class="navbar color-green">
+          <div id="navbar-desktop" class="navbar-desktop">
+              <div class="linkDiv">
+                  <li><a href="/">Acceuil</a></li>
+                  <li><a href="/formulaire.html">Prestation</a></li>
+                  <li><a href="/galerie.html">Galerie</a></li>
+              </div>
+              <div class="buttonDiv">
+                  <button>Demander un devis</button>
+              </div>
+          </div>
+          <div id="navbar-mobile" class="navbar-mobile"></div>
+      </nav>
+
+      <section class="sectionGalerie">
+        <div class="containerGalerie" id="containerGalerie">
+          <div>
+            <img src="https://placehold.co/600x400" alt="" srcset="">
+          </div>
+          <div>
+            <img src="https://placehold.co/600x400" alt="" srcset="">
+          </div>
+        </div>
+      </section>
+    
+    <script type="module" src="./public/js/galerie.js"></script>
     <script type="module" src="/main.js"></script>
-    <script type="module" src="/public/js/galerie.js"></script>
   </body>
 </html>
