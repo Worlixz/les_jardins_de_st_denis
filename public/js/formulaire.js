@@ -1,3 +1,6 @@
+import emailjs from '@emailjs/browser';
+
+
 const divForm = document.getElementById('containerForm')
 const btnClick = document.getElementById('btnClick')
 
@@ -441,4 +444,10 @@ function fiveStep () {
 
 firstStep()
 
+
+/* EMAIL JS  */
+
+emailjs.init('user_65GzM2nYvTARgXkQ9')
+const serviceID = "service_vzb3e47" // OK
+const templateID = "template_q43ojht" // ok
 
