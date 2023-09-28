@@ -11,6 +11,10 @@
     font-size: calc(10px + 0.6vw);
 }
 
+.navbar-mobile{
+    display: none;
+}
+
 .color-green{
     background-color: defaultVar.$light-green;
 }
@@ -478,4 +482,110 @@ input[type=number] {
     border-radius: 5px;
     border: solid 2px defaultVar.$light-green;
     padding: 10px;
+}
+
+/* FOOTER */
+
+footer{
+    width: 100%;
+    height: 150px;
+    background-color: defaultVar.$dark-green;
+}
+.footer{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    margin: 0 20px;
+    flex-wrap: wrap;
+}
+.footer a{
+    color: #fff;
+    text-decoration: none;
+}
+.footer a:visited{
+    color: #fff;
+}
+
+
+/* Mobile */
+
+@media screen and (max-width: 600px) {
+    .navbar-desktop{
+        display: none;
+    }
+    .navbar-mobile{
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .buttonDiv{
+        margin: 10px;
+    }
+    .span{
+        position: relative;
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+        z-index: 10;
+    }
+    .spanBtn{
+        position: absolute;
+        content: "";
+        height: 3px;
+        background-color: #fff;
+    }
+    .span1{
+        top: 0%;
+        width: 100%;
+        transition: ease-in-out .2s;
+    }
+    .span2{
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+        transition: ease-in-out .2s;
+    }
+    .span3{
+        bottom: 0%;
+        width: 100%;
+        transition: ease-in-out .2s;
+    }
+    .linkMobil{
+        position: absolute;
+        top: 0px;
+        background-color: #fff;
+        width: 100vw;
+        height: 100vh;
+        z-index: 2;
+        flex-direction: column;
+        align-items: center;
+    }
+    .linkMobil li:first-child{
+        margin-top: 80px;
+    }
+    .linkMobil li{
+        margin: 20px;
+        list-style: none;
+    }
+
+    .span1Click {
+        transform: 
+            rotate(45deg)
+            translate(9px, 10px);
+        transition: ease-in-out .2s;
+
+    }
+    .span2Click {
+        display: none;
+    }
+    .span3Click {
+        transform: 
+            rotate(-45deg)
+            translate(9px, -9px);
+        transition: ease-in-out .2s;
+    }
 }
