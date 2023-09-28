@@ -296,6 +296,7 @@
 
 .sectionGalerie{
     margin-top: 100px;
+    min-height: 100vh;
 }
 
 .containerGalerie{
@@ -324,6 +325,7 @@
 /* FORMULAIRE */
 .sectionForm{
     text-align: center;
+    min-height: 100vh;
 }
 
 .btnSuivant{
@@ -588,4 +590,20 @@ footer{
             translate(9px, -9px);
         transition: ease-in-out .2s;
     }
+}
+
+/* MENTION Légales */
+
+.mentionLegales{
+    max-width: 1440px;
+    padding: 0 20px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+.mentionLegales h2{
+    margin: 100px 0 50px;
+    text-align: center;
+}
+.mentionLegales h3{
+    margin-top: 30px;
 }
