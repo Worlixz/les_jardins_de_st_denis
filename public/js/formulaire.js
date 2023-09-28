@@ -404,8 +404,12 @@ function fiveStep () {
           <div>
             <input type="email" name="email" id="email" placeholder="E-mail">
           </div>
+          <div class="divRgpd">
+            <input class="rgpd" type="checkbox" name="rgpd" id="rgpd">
+            <label>Acceptez-vous d'être recontacté via ces informations ?</label>
+          </div>
         </div>
-        <button id="btnEnvoyer" class="btnSuivant">Envoyer</button>
+        <button id="btnEnvoyer" class="btnSuivant disabledBtn" disabled>Envoyer</button>
     `
 
     const selectElement = document.querySelector(".selector-civi")
@@ -414,6 +418,7 @@ function fiveStep () {
     const inputTel = document.getElementById('tel')
     const inputEmail = document.getElementById('email')
     const btnEnvoyer = document.getElementById('btnEnvoyer')
+    const rgpd = document.getElementById('rgpd')
 
     selectElement.addEventListener("change", (event) => {
         dataForm.information.civilite = event.target.value
@@ -436,9 +441,19 @@ function fiveStep () {
         dataForm.information.mail = event.target.value
         console.log(dataForm);
     });
+    rgpd.addEventListener('click', (e) => {
+      btnEnvoyer.disabled = !rgpd.checked
+      if (btnEnvoyer.disabled) {
+        btnEnvoyer.classList.add('disabledBtn')
+      }else{
+        btnEnvoyer.classList.remove('disabledBtn')
+      }
+    })
     btnClick.remove()
     btnEnvoyer.addEventListener('click', (e) => {
+      if(!btnEnvoyer.disabled){
         sendMail(dataForm)
+      }
     })
 }
 

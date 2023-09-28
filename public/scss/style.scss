@@ -486,6 +486,20 @@ input[type=number] {
     padding: 10px;
 }
 
+.divRgpd{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.divRgpd label{
+    margin-left: 10px;
+}
+
+.rgpd{
+    width: 15px !important;
+    height: 15px !important;
+}
+
 /* FOOTER */
 
 footer{
