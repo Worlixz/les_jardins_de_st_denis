@@ -15,6 +15,12 @@ export default defineConfig({
         globals: {
           vue: 'Vue',
         },
+        input: {
+          index: "index.html",
+          formulaire: "formulaire.html",
+          galerie: "galerie.html",
+          mentionLegales: "mentionLegales.html"
+        }
       },
     },
   },
