@@ -1,7 +1,6 @@
-import {db , storage} from '../js/init_firebase'
+import { db } from '../js/init_firebase'
 import { collection, getDocs } from "firebase/firestore"; 
-import { ref, getDownloadURL } from "firebase/storage";
-import { compileAsync } from 'sass';
+
 
 
 
@@ -28,7 +27,7 @@ async function affichageAvis (selectedAvis, containerAvis) {
                 <p>Prestation : ${fctAvis.prestation}</p>
             </div>
             <div>
-                ${note(fctAvis)}
+                ${await note(fctAvis)}
             </div>
         </div>
         <div class="avisUser">
@@ -46,45 +45,46 @@ function note (fctAvis) {
     switch (fctAvis.note) {
         case 1: 
             return `
-                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_stroke.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_stroke.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_stroke.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_stroke.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_orange.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_orange.png" alt="" srcset=""></i>
             `
         case 2: 
             return `
-                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_stroke.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_stroke.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_stroke.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_orange.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_orange.png" alt="" srcset=""></i>
             `
         case 3: 
             return `
-                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_stroke.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_stroke.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_orange.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_orange.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_orange.png" alt="" srcset=""></i>
             `
         
         
         case 4: 
             return `
-                <i><img src="./public/assets/logo/star_stroke.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_stroke.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_orange.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_orange.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_orange.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_orange.png" alt="" srcset=""></i>
             `
         case 5: 
             return `
-                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
-                <i><img src="./public/assets/logo/Star_orange.svg" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_orange.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_orange.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_orange.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_orange.png" alt="" srcset=""></i>
+                <i><img src="./assets/logo/star_orange.png" alt="" srcset=""></i>
             `
     }
 }
