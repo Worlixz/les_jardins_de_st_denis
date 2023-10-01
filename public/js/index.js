@@ -98,7 +98,6 @@ function note (fctAvis) {
 function affichageHerobanner () {
    const imgBanner = document.getElementById('herobanner_photo')
    const slogan = document.getElementById('sloganBanner')
-   console.log(imgBanner);
    const initDate = new Date()
    const monthDate = (initDate.getMonth()+1)
    

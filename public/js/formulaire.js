@@ -74,13 +74,11 @@ function firstStep () {
     const divBtnReal = document.getElementById('divBtnReal')
     divBtnCrea.addEventListener('click', (e) => {
         dataForm.type = "Creation"
-        console.log(dataForm);
         divBtnCrea.classList.add('selected')
         divBtnReal.classList.remove('selected')
     })
     divBtnReal.addEventListener('click', (e) => {
         dataForm.type = "Realisation"
-        console.log(dataForm);
         divBtnReal.classList.add('selected')
         divBtnCrea.classList.remove('selected')
     })
@@ -220,73 +218,57 @@ function secondtStep () {
     inputTaille.addEventListener('change', function(e) {
         if (this.checked) {
           dataForm.prestation.push(e.target.value)
-          console.log(dataForm);
       } else {
           dataForm.prestation = dataForm.prestation.filter( (element) =>  element !== e.target.value)
-          console.log(dataForm);
       }
     });
     inputPelouse.addEventListener('change', function(e) {
         if (this.checked) {
             dataForm.prestation.push(e.target.value)
-            console.log(dataForm);
         } else {
             dataForm.prestation = dataForm.prestation.filter( (element) =>  element !== e.target.value)
-            console.log(dataForm);
     }
     });
     inputAmenagement.addEventListener('change', function(e) {
     if (this.checked) {
         dataForm.prestation.push(e.target.value)
-        console.log(dataForm);
     } else {
         dataForm.prestation = dataForm.prestation.filter( (element) =>  element !== e.target.value)
-        console.log(dataForm);
     }
     });
     inputCreation.addEventListener('change', function(e) {
         if (this.checked) {
             dataForm.prestation.push(e.target.value)
-            console.log(dataForm);
         } else {
             dataForm.prestation = dataForm.prestation.filter( (element) =>  element !== e.target.value)
-            console.log(dataForm);
     }
     });
     inputPose.addEventListener('change', function(e) {
     if (this.checked) {
         dataForm.prestation.push(e.target.value)
-        console.log(dataForm);
     } else {
         dataForm.prestation = dataForm.prestation.filter( (element) =>  element !== e.target.value)
-        console.log(dataForm);
     }
     });
     inputEntretien.addEventListener('change', function(e) {
         if (this.checked) {
             dataForm.prestation.push(e.target.value)
-            console.log(dataForm);
         } else {
             dataForm.prestation = dataForm.prestation.filter( (element) =>  element !== e.target.value)
-            console.log(dataForm);
     }
     });
     inputCloture.addEventListener('change', function(e) {
     if (this.checked) {
         dataForm.prestation.push(e.target.value)
-        console.log(dataForm);
     } else {
         dataForm.prestation = dataForm.prestation.filter( (element) =>  element !== e.target.value)
-        console.log(dataForm);
     }
     });
     inputTravaux.addEventListener('change', function(e) {
         if (this.checked) {
             dataForm.prestation.push(e.target.value)
-            console.log(dataForm);
         } else {
             dataForm.prestation = dataForm.prestation.filter( (element) =>  element !== e.target.value)
-            console.log(dataForm);
     }
     });
 }
@@ -313,18 +295,15 @@ function thirdStep () {
 
     btnGrandeur.addEventListener('change', (e) => {
         dataForm.superficie = btnGrandeur.value
-        console.log(dataForm);
     })
     
     btnUnstep.addEventListener('click', (e) => {
         btnGrandeur.valueAsNumber -=1
         dataForm.superficie = btnGrandeur.value
-        console.log(dataForm);
     })
     btnUpstep.addEventListener('click', (e) => {
         btnGrandeur.valueAsNumber +=1
         dataForm.superficie = btnGrandeur.value
-        console.log(dataForm);
     })
     
 }
@@ -356,21 +335,18 @@ function fourthtStep () {
     const divBtnInco = document.getElementById('divBtnInco')
     divBtnPonc.addEventListener('click', (e) => {
         dataForm.recurrence = "Ponctuel"
-        console.log(dataForm);
         divBtnPonc.classList.add('selected')
         divBtnRecu.classList.remove('selected')
         divBtnInco.classList.remove('selected')
     })
     divBtnRecu.addEventListener('click', (e) => {
         dataForm.recurrence = "Recurrent"
-        console.log(dataForm);
         divBtnRecu.classList.add('selected')
         divBtnPonc.classList.remove('selected')
         divBtnInco.classList.remove('selected')
     })
     divBtnInco.addEventListener('click', (e) => {
         dataForm.recurrence = "Je ne sais pas"
-        console.log(dataForm);
         divBtnInco.classList.add('selected')
         divBtnPonc.classList.remove('selected')
         divBtnRecu.classList.remove('selected')
@@ -422,24 +398,19 @@ function fiveStep () {
 
     selectElement.addEventListener("change", (event) => {
         dataForm.information.civilite = event.target.value
-        console.log(dataForm);
     });
 
     inputNom.addEventListener("change", (event) => {
         dataForm.information.nom = event.target.value
-        console.log(dataForm);
     });
     inputPrenom.addEventListener("change", (event) => {
         dataForm.information.prenom = event.target.value
-        console.log(dataForm);
     });
     inputTel.addEventListener("change", (event) => {
         dataForm.information.tel = event.target.value
-        console.log(dataForm);
     });
     inputEmail.addEventListener("change", (event) => {
         dataForm.information.mail = event.target.value
-        console.log(dataForm);
     });
     rgpd.addEventListener('click', (e) => {
       btnEnvoyer.disabled = !rgpd.checked
