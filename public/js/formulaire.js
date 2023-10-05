@@ -464,7 +464,7 @@ function sendMail(dataForm){
     position: "center",
     style: {
       background: "linear-gradient(35deg, rgba(59,0,0,1) 0%, rgba(191,0,0,1) 100%)",
-    } // `left`, `center` or `right`
+    }
     
     }).showToast();
   })
