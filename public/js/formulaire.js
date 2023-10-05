@@ -1,4 +1,6 @@
 import emailjs from '@emailjs/browser';
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 
 const divForm = document.getElementById('containerForm')
@@ -438,8 +440,34 @@ function sendMail(dataForm){
   emailjs.send(serviceID, templateID, fctForm)
   .then(response => {
     console.log('SUCCESS', response.status, response.text);
+    Toastify({
+
+      text: "Email envoyé",
+      
+      duration: 3000,
+      gravity: "top", // `top` or `bottom`
+      position: "center", // `left`, `center` or `right`
+      style: {
+        background: "linear-gradient(35deg, rgba(0,33,115,1) 0%, rgba(0,236,255,1) 100%)",
+      }
+      
+      }).showToast();
   })
-  .catch(err => console.log('FAILED...', err))
+  .catch(err => {
+  console.log('FAILED...', err)
+  Toastify({
+
+    text: "L'email n'a pas pu être envoyé.",
+    
+    duration: 3000,
+    gravity: "top", // `top` or `bottom`
+    position: "center",
+    style: {
+      background: "linear-gradient(35deg, rgba(59,0,0,1) 0%, rgba(191,0,0,1) 100%)",
+    } // `left`, `center` or `right`
+    
+    }).showToast();
+  })
 }
 
 /* EMAIL JS  */
