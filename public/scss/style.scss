@@ -193,8 +193,8 @@
 
 .cardPrestation{
     position: relative;
-    width: 300px;
-    height: 400px;
+    width: 300px !important;
+    height: 400px !important;
     margin: 30px;
     transition: ease-in-out .2s;
     display: flex;
@@ -202,7 +202,7 @@
     justify-content: center;
     
 }
-.cardPrestation h3{
+.cardPrestation > h3{
     position: absolute;
     color: #fff;
     border-top: 5px solid #ffffff;
@@ -216,27 +216,39 @@
     
 }
 .cardPrestation:hover{
-    width: 500px;
+    width: 500px !important;
     transition: ease-in-out .2s;
 }
 
 .cardPresta1{
     background: url('../assets/img/presta_entretient.jpg');
+    width: 100%;
+    height: 100%;
 }
 .cardPresta2{
     background: url('../assets/img/presta_taille.jpg');
+    width: 100%;
+    height: 100%;
 }
 .cardPresta3{
     background: url('../assets/img/presta_creation.jpg');
+    width: 100%;
+    height: 100%;
 }
 .cardPresta4{
     background: url('../assets/img/presta_pelouse.jpg');
+    width: 100%;
+    height: 100%;
 }
 .cardPresta5{
     background: url('../assets/img/presta_arrossage.jpg');
+    width: 100%;
+    height: 100%;
 }
 .cardPresta6{
     background: url('../assets/img/presta_terrasse.jpg');
+    width: 100%;
+    height: 100%;
 }
 
 .cardBlur{
@@ -636,4 +648,46 @@ footer{
 }
 .mentionLegales h3{
     margin-top: 30px;
+}
+
+/* PAGE PRESTATION */
+
+.div-info-presta{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 50px;
+    max-width: 900px;
+
+    h1{
+        margin-bottom: 25px;
+    }
+
+}
+
+/* PAGE DECOUVERTE */
+
+.title-decouverte{
+    max-width: 1200px;
+    margin: 75px auto 35px;
+}
+
+.div-cont-decouverte{
+    max-width: 1200px;
+    margin: 35px auto;
+
+    h4{
+        margin: 0 0 5px;
+        font-size: 1.2rem;
+    }
+
+    p{
+        line-height: 1.4rem;
+        letter-spacing: 0.02rem;
+    }
+}
+
+#btnContact{
+    display: flex;
+    margin: 30px 10px 100px;
+    justify-content: center;
 }

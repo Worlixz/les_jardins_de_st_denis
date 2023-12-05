@@ -20,7 +20,9 @@ export default defineConfig({
         index: "index.html",
         formulaire: "formulaire.html",
         galerie: "galerie.html",
-        mentionLegales: "mentionLegales.html"
+        mentionLegales: "mentionLegales.html",
+        prestation: "prestation.html",
+        decouverte: "decouverte.html"
       }
     },
   },

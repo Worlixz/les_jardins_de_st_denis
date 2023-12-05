@@ -2,7 +2,8 @@ import { db } from '../js/init_firebase'
 import { collection, getDocs } from "firebase/firestore"; 
 
 
-
+let titlePrestation = document.getElementsByClassName('titlePrestation')
+let cardPrestation = document.getElementsByClassName('cardPrestation')
 
 let arrayAvis = []
 const containerAvis = document.getElementById('containerAvis')
@@ -196,3 +197,35 @@ sliders.forEach(function (slider) {
         }
     }
 });
+
+
+/* GESTION DU HOVER SUR DIV TITLE */
+
+
+for (let i = 0; i < titlePrestation.length; i++) {
+    const element = titlePrestation[i];
+    element.addEventListener('mouseover', (e) => {
+        const form = e.relatedTarget
+        form.classList.remove('cardBlur')
+    })
+    element.addEventListener('mouseout', (e) => {
+        const form = e.relatedTarget
+        form.classList.add('cardBlur')
+    })
+    element.addEventListener('click', (e) => {
+        console.log('click', e.target.id);
+        console.log(e);
+        const path = e.target.id
+        window.location.href = `/prestation.html?ref=${path}`
+    })
+}
+
+for(let i = 0; i < cardPrestation.length; i++){
+    const element = cardPrestation[i]
+    element.addEventListener('click', (e) => {
+        console.log('click', e.target.id);
+        console.log(e);
+        const path = e.target.id
+        window.location.href = `/prestation.html?ref=${path}`
+    })
+}
