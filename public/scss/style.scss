@@ -528,6 +528,7 @@ footer{
     color: #fff;
     margin: 0 20px;
     flex-wrap: wrap;
+    margin-top: 100px;
 }
 .footer a{
     color: #fff;
@@ -690,4 +691,8 @@ footer{
     display: flex;
     margin: 30px 10px 100px;
     justify-content: center;
+}
+
+.mini-container{
+    margin: 15px 0 40px;
 }
