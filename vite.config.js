@@ -22,8 +22,7 @@ export default defineConfig({
         galerie: "galerie.html",
         mentionLegales: "mentionLegales.html",
         prestation: "prestation.html",
-        decouverte: "decouverte.html",
-        sitemap: "sitemap.xml"
+        decouverte: "decouverte.html"
       }
     },
   },
