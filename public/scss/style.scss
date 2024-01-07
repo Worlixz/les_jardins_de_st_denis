@@ -61,6 +61,8 @@
     margin: 20px;
 }
 
+/* Hero banner */
+ 
 .herobanner{
     height: 100vh;
     position: relative;
@@ -132,6 +134,8 @@
     margin-top: 75px;
 }
 
+/* Pourquoi nous choisir */
+
 .card{
     margin: 20px;
     max-width: 320px;
@@ -150,6 +154,8 @@
 .card h4{
     font-size: 24px;
 }
+
+/* Société locale */
 
 .localeDiv{
     position: relative;
@@ -174,6 +180,14 @@
     transform: translate(-50%, -50%);
 }
 
+@media screen and (max-width : 1200px){
+    .localeDiv img{
+        transform: 
+            translateX(0%)
+            translateY(-50%);
+    }
+}
+
 /* .grisPresta{
     display: grid;
     max-width: 1440px;
@@ -181,6 +195,8 @@
     margin: 50px auto 0;
     grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
 } */
+
+/* Prestation */
 
 .flexPresta{
     display: flex;
