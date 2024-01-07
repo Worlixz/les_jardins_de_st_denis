@@ -29,6 +29,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
         case 'terrasse' : 
             spanPrestation.innerText = ", la création de vos terrasse"
             break;
+        case 'cloture':
+            spanPrestation.innerText = ", la création de vos clôture"
+            break;
 
     }
 
